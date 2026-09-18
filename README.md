@@ -36,6 +36,6 @@ python app.py
 
 ## 👨‍💻 Author
 
-Jagannath Prasad Dash 
-Ravenshaw University 
+Jagannath Prasad Dash || 
+Ravenshaw University  ||
 Created: 18 September 2026
