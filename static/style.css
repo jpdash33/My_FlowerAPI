@@ -1,0 +1,348 @@
+/* ========================================
+   RESET
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   BODY
+======================================== */
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #172554;
+    /*
+        Background inspired by your image:
+        Purple
+        ↓
+        Pink / Lavender
+        ↓
+        Blue
+        ↓
+        Deep Navy
+    */
+    background:
+        radial-gradient(circle at 8% 12%,
+            rgba(124, 124, 255, 0.95) 0%,
+            rgba(124, 124, 255, 0) 32%),
+        radial-gradient(circle at 90% 15%,
+            rgba(255, 205, 235, 0.95) 0%,
+            rgba(255, 205, 235, 0) 30%),
+        radial-gradient(circle at 15% 55%,
+            rgba(255, 184, 220, 0.70) 0%,
+            rgba(255, 184, 220, 0) 30%),
+        radial-gradient(circle at 90% 55%,
+            rgba(159, 143, 255, 0.75) 0%,
+            rgba(159, 143, 255, 0) 35%),
+        linear-gradient(180deg,
+            #aaa5ff 0%,
+            #f7e7fa 27%,
+            #d8c8fa 45%,
+            #8177e8 70%,
+            #3735a1 87%,
+            #17245f 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* ========================================
+   MAIN
+======================================== */
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 45px 20px 60px;
+}
+
+/* ========================================
+   TITLE
+======================================== */
+h1 {
+    margin-top: 20px;
+    font-size: clamp(42px, 7vw, 70px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    background: linear-gradient(90deg,
+            #122354,
+            #653de8,
+            #e52fa1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: titleAppear 0.8s ease;
+}
+
+/* Title animation */
+@keyframes titleAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 🌸 Flower API Logo */
+#logo {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+
+    display: block;
+    margin: 0 auto 12px auto;
+
+    padding: 10px;
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+
+    box-shadow:
+        0 8px 25px rgba(55, 45, 150, 0.20),
+        inset 0 1px 8px rgba(255, 255, 255, 0.45);
+
+    backdrop-filter: blur(8px);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Small hover effect */
+#logo:hover {
+    transform: translateY(-3px) scale(1.04);
+
+    box-shadow:
+        0 12px 30px rgba(55, 45, 150, 0.28),
+        inset 0 1px 8px rgba(255, 255, 255, 0.55);
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+    #logo {
+        width: 65px;
+        height: 65px;
+        padding: 7px;
+        border-radius: 17px;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* ========================================
+   SEARCH CONTAINER
+======================================== */
+.search {
+    width: min(780px, 92%);
+    margin-top: 35px;
+    padding: 35px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow:
+        0 20px 50px rgba(46, 35, 130, 0.18);
+    text-align: center;
+    animation: searchAppear 0.8s ease 0.15s both;
+}
+
+@keyframes searchAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   INPUT
+======================================== */
+#flower {
+    width: 100%;
+    padding: 17px 23px;
+    border-radius: 50px;
+    border: 2px solid rgba(101, 92, 230, 0.35);
+    outline: none;
+    background: rgba(255, 255, 255, 0.85);
+    color: #172554;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+#flower::placeholder {
+    color: #64748b;
+}
+
+#flower:focus {
+    border-color: #6954ed;
+    background: white;
+    box-shadow:
+        0 0 0 5px rgba(105, 84, 237, 0.12),
+        0 8px 25px rgba(105, 84, 237, 0.12);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   SEARCH BUTTON
+======================================== */
+button {
+    margin-top: 22px;
+    padding: 14px 48px;
+    border: none;
+    border-radius: 50px;
+    background:
+        linear-gradient(100deg,
+            #4b45f5,
+            #7a3bea,
+            #ed3b9f);
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow:
+        0 10px 25px rgba(108, 58, 230, 0.30);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 15px 32px rgba(108, 58, 230, 0.40);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+/* ========================================
+   RESULT AREA
+======================================== */
+/*
+    IMPORTANT:
+    Initially there is NO result area.
+    Therefore it doesn't take any space.
+*/
+.show_flower {
+    display: none;
+}
+
+/*
+    JavaScript adds "active"
+    after the user searches.
+*/
+.show_flower.active {
+    display: flex;
+    width: 100%;
+    margin-top: 28px;
+    padding: 25px;
+    min-height: 180px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 15px 40px rgba(47, 37, 130, 0.14);
+    justify-content: center;
+    align-items: center;
+    animation: resultAppear 0.5s ease;
+}
+
+@keyframes resultAppear {
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0) scale(1);
+    }
+}
+
+/* ========================================
+   RESULT IMAGE
+======================================== */
+.show_flower img {
+    max-width: 280px;
+    max-height: 220px;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow:
+        0 12px 30px rgba(20, 30, 80, 0.20);
+    animation: imageAppear 0.6s ease;
+}
+
+@keyframes imageAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ========================================
+   RESULT TEXT
+======================================== */
+.show_flower h2 {
+    color: #5741db;
+    margin-bottom: 8px;
+}
+
+.show_flower p {
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+@media (max-width: 600px) {
+    main {
+        padding-top: 30px;
+    }
+
+    h1 {
+        font-size: 45px;
+        text-align: center;
+    }
+
+    .search {
+        width: 94%;
+        padding: 22px;
+        margin-top: 25px;
+        border-radius: 22px;
+    }
+
+    #flower {
+        font-size: 15px;
+        padding: 15px 18px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .show_flower.active {
+        padding: 20px;
+    }
+}
